@@ -15,7 +15,7 @@ pipeline {
                     def teamId = 'Replace with your team ID'
                     def apiUrl = "https://api.staging.gremlin.com/v1/services/${serviceId}/score?teamId=${teamId}"
                     def apiToken = 'Bearer Replace with your Bearer token or API token'
-                    def minScore = 80.0
+                    def minScore = 80.0 // Replace with your minimum Gremlin Score
 
                     def response = sh(script: "curl -s -X GET '${apiUrl}' -H 'Authorization: ${apiToken}' -H 'accept: application/json'", returnStatus: true)
 
@@ -52,9 +52,6 @@ pipeline {
                                 echo "No valid score found in API response." // Debug logging
                                 error("Unable to extract Gremlin Score from the API response.")
                             }
-                        } else {
-                            echo "No matches found in the API response." // Debug logging
-                            error("Unable to extract any data from the API response.")
                         }
                     }
                 }
@@ -80,3 +77,4 @@ pipeline {
         }
     }
 }
+
