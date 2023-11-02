@@ -13,7 +13,7 @@ pipeline {
                 script {
                     def serviceId = 'Replace with your service ID'
                     def teamId = 'Replace with your team ID'
-                    def apiUrl = "https://api.staging.gremlin.com/v1/services/${serviceId}/score?teamId=${teamId}"
+                    def apiUrl = "https://api.gremlin.com/v1/services/${serviceId}/score?teamId=${teamId}"
                     def apiToken = 'Bearer Replace with your Bearer token or API token'
                     def minScore = 80.0 // Replace with your minimum Gremlin Score
 
